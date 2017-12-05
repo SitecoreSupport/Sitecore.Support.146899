@@ -32,7 +32,7 @@ namespace Sitecore.Support
     protected void Button1_Click(object sender, EventArgs e)
     {
       var contacts = FindContacts();
-      Log.Audit("Fix contacts was started", this);
+      Log.Audit("Fixing contacts was started", this);
       ContactManager contactManager = Factory.CreateObject("tracking/contactManager", true) as ContactManager;
       ContactRepositoryBase contactRepository = Factory.CreateObject("tracking/contactRepository", true) as ContactRepositoryBase;
       foreach (BsonDocument contact in contacts)
