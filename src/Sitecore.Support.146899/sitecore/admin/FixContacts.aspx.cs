@@ -46,7 +46,7 @@ namespace Sitecore.Support
         if (survivingContact == null)
         {
           Log.Audit("Surviving contact is null " + successorId.AsGuid, this);
-          return;
+          continue;
         }
 
         //remove incorrect Successor and Identifiers fields.
@@ -62,6 +62,7 @@ namespace Sitecore.Support
         LeaseOwner leaseOwner = new LeaseOwner(AnalyticsSettings.ClusterName, LeaseOwnerType.WebCluster);
         contactRepository.ObsoleteContact(dyingContact, leaseOwner, new ID(survivingContact.ContactId));
       }
+      Log.Audit("Fix contacts has ended", this);
       Label1.Text = "Completed";
     }
 
