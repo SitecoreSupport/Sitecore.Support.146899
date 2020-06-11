@@ -46,7 +46,7 @@ namespace Sitecore.Support
         if (survivingContact == null)
         {
           Log.Audit("Surviving contact is null " + successorId.AsGuid, this);
-          return;
+          continue;
         }
 
         //remove incorrect Successor and Identifiers fields.
