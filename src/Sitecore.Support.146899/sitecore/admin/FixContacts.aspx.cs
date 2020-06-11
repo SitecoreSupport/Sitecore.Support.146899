@@ -62,6 +62,9 @@ namespace Sitecore.Support
         LeaseOwner leaseOwner = new LeaseOwner(AnalyticsSettings.ClusterName, LeaseOwnerType.WebCluster);
         contactRepository.ObsoleteContact(dyingContact, leaseOwner, new ID(survivingContact.ContactId));
       }
+
+      Log.Audit("Fixing contacts was finished", this);
+      
       Label1.Text = "Completed";
     }
 
