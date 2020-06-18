@@ -40,6 +40,8 @@ namespace Sitecore.Support
         var successorId = contact["Successor"];
         var id = contact["_id"];
 
+        Log.Audit($"Processing contact with id: {id} and Successor {successorId}", this);
+
         var survivingContact = contactManager.LoadContactReadOnly(successorId.AsGuid);
 
 
